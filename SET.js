@@ -36,7 +36,7 @@ src(o0).add(noise(1,1,1),1).out(o1)
 src(o1).color(10,10,100).modulate(o3).out(o2)
 //
 shape(3).rotate(()=>Math.sin(time)).repeat(()=>time,1).out(o3)
-render()
+render(o0)
 //pt. 2
 const arr=[1,2,3]
 const arr1=(arr.map(n=>1+n))
