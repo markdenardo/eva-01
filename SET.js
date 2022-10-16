@@ -44,7 +44,7 @@ console.log('arr1',arr1)
 const f2=(()=>a.fft[2])
 voronoi(1,1,1).color(f2).modulate(o0,Math.PI).out(o0)
 shape(arr1).modulatePixelate(osc(1,1,1)).modulate(o1,0.5).add(o0).out(o1)
-render()
+render(o0)
 //
 // harmonization rate
 let x = 1
