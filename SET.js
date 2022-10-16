@@ -6,27 +6,27 @@
 // MDN (@markdenardo)
 
 let rrand = (min, max) => Math.random() * (max - min) + min;
-let clamp = (x) => Math.max(0, Math.min(x, 1));
-let either = (x,y,w=0.5) => Math.random() > w ? x : y;
+let clamp = (x1) => Math.max(0, Math.min(x1, 1));
+let either = (x1,y1,w1=0.5) => Math.random() > w1 ? x1 : y1;
 
 perms = 0;
 function cM(){navigator.permissions.query({name: 'microphone'}).then((pS)=>{perms = pS.state !== 'denied';});}
 cI = window.cI ? cI : 0;clearInterval(cI);cI = setInterval(cM,3000);if(/iPad|iPhone|iPod/.test(navigator.userAgent)) clearInterval(cI);
-let x = 0
-let nomic = ()=> x = either(clamp(x += rrand(-.05,.12)) , x *= 0.7 )
+let x1 = 0
+let nomic = ()=> x1 = either(clamp(x1 += rrand(-.05,.12)) , x1 *= 0.7 )
 let yesmic = ()=> a.fft[0];
-let f = ()=> perms ? yesmic() : nomic();
+let f1 = ()=> perms ? yesmic() : nomic();
 
-const t =(()=>time)
-const pi=(()=>Math.random(Math.PI))
-const sh=(s,o,m)=>(shape(s).repeat(t,1).kaleid([1,2,3].fast()).scale(pi).rotate(t,0.1).out(o))
-const flt=(i,v,o)=>(src(i).scale(v).out(o))
+const t1 =(()=>time)
+const pi1=(()=>Math.random(Math.PI))
+const sh1=(s,o,m)=>(shape(s).repeat(t1,1).kaleid([1,2,3].fast()).scale(pi1).rotate(t1,0.1).out(o))
+const flt1=(i,v,o)=>(src(i).scale(v).out(o))
 const flt2=(i,m,v,o)=>(src(i).modulate(m).modulatePixelate(noise(v,0.5),100).out(o))
 
-sh(f,o0,o0)
-flt(o0,f,o1)
-flt(o0,pi,o2)
-flt2(o0,o1,f,o3)
+sh1(f1,o0,o0)
+flt1(o0,f1,o1)
+flt1(o0,pi1,o2)
+flt2(o0,o1,f1,o3)
 render(o3)
 //ramiel
 shape(3).modulate(o0,0.5).repeat(()=>time,1).modulatePixelate(osc(1,1,1)).repeat(Math.PI,time*4).out(o0)
@@ -41,8 +41,8 @@ render()
 const arr=[1,2,3]
 const arr1=(arr.map(n=>1+n))
 console.log('arr1',arr1)
-const f1=(()=>a.fft[2])
-voronoi(1,1,1).color(f1).modulate(o0,Math.PI).out(o0)
+const f2=(()=>a.fft[2])
+voronoi(1,1,1).color(f2).modulate(o0,Math.PI).out(o0)
 shape(arr1).modulatePixelate(osc(1,1,1)).modulate(o1,0.5).add(o0).out(o1)
 render()
 //
